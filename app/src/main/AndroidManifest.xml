@@ -13,9 +13,12 @@
         android:theme="@style/Theme.AppCompat.Light"
         tools:targetApi="31">
         <activity
-            android:name=".CreatePairActivity"
-            android:label="Создание пар"
+            android:name=".pairs.GameActivity"
             android:exported="false" />
+        <activity
+            android:name=".pairs.CreatePairActivity"
+            android:exported="false"
+            android:label="Создание пар" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -3,9 +3,8 @@ package com.example.howdareyou
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.ComponentActivity
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.howdareyou.pairs.CreatePairActivity
 
 
 class MainActivity : AppCompatActivity() {

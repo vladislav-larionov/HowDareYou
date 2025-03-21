@@ -58,11 +58,11 @@
         android:id="@+id/startGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="startGame"
         android:text="Начать" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pairsList"
-        android:onClick="startGame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -1,6 +1,7 @@
-package com.example.howdareyou
+package com.example.howdareyou.pairs
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -9,6 +10,8 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.howdareyou.Player
+import com.example.howdareyou.R
 import com.google.android.material.textfield.TextInputEditText
 
 class CreatePairActivity : AppCompatActivity() {
@@ -62,5 +65,13 @@ class CreatePairActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    fun startGame(view: View) {}
+    fun startGame(view: View) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("playersCount", playerPairs.size)
+        playerPairs.forEachIndexed { index, element ->
+            intent.putExtra("${index}_player1", "${element.first.name}_${element.first.sex}")
+            intent.putExtra("${index}_player2", "${element.second.name}_${element.second.sex}")
+        }
+        startActivity(intent)
+    }
 }
