@@ -66,6 +66,8 @@ class CreatePairActivity : AppCompatActivity() {
     }
 
     fun startSimple(view: View) {
+        if (playerPairs.size < 1)
+            return
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("playersCount", playerPairs.size)
         intent.putExtra("mode", "simple")
@@ -77,6 +79,8 @@ class CreatePairActivity : AppCompatActivity() {
     }
 
     fun start18(view: View) {
+        if (playerPairs.size < 1)
+            return
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("playersCount", playerPairs.size)
         intent.putExtra("mode", "18")

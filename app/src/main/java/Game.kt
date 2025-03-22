@@ -36,9 +36,9 @@ class Game {
              return playerPairs[curPairIndex].second.name
     }
     public fun getTruth() : String {
-        return truths[(0..truths.size).random()]
+        return truths[(0..truths.size-1).random()]
     }
     public fun getAction() : String {
-        return actions[(0..actions.size).random()]
+        return actions[(0..actions.size-1).random()]
     }
 }

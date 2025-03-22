@@ -50,7 +50,6 @@ class GameActivity : AppCompatActivity() {
         }
         if (mode == "simple") {
             truths.addAll(resources.getStringArray(R.array.question_truths))
-            truths.addAll(resources.getStringArray(R.array.question_truths18))
             actions.addAll(resources.getStringArray(R.array.question_actions))
         }
         game = Game(playerPairs, actions, truths)
