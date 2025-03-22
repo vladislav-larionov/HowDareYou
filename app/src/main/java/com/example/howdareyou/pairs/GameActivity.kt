@@ -40,10 +40,19 @@ class GameActivity : AppCompatActivity() {
                 playerPairs.add(Pair(Player(player1Name, player1Sex), Player(player2Name, player2Sex)))
             }
         }
+        val mode = arguments!!.getString("mode")!!
         val actions = ArrayList<String>()
-        actions.addAll(resources.getStringArray(R.array.question_actions))
         val truths = ArrayList<String>()
-        truths.addAll(resources.getStringArray(R.array.question_truths))
+
+        if (mode == "18") {
+            truths.addAll(resources.getStringArray(R.array.question_truths18))
+            actions.addAll(resources.getStringArray(R.array.question_actions18))
+        }
+        if (mode == "simple") {
+            truths.addAll(resources.getStringArray(R.array.question_truths))
+            truths.addAll(resources.getStringArray(R.array.question_truths18))
+            actions.addAll(resources.getStringArray(R.array.question_actions))
+        }
         game = Game(playerPairs, actions, truths)
         (findViewById(R.id.player) as TextView).setText("Сейчас отвечает: ${game.getCurPlayer()}")
     }

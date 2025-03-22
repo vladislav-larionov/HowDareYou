@@ -65,9 +65,21 @@ class CreatePairActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    fun startGame(view: View) {
+    fun startSimple(view: View) {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("playersCount", playerPairs.size)
+        intent.putExtra("mode", "simple")
+        playerPairs.forEachIndexed { index, element ->
+            intent.putExtra("${index}_player1", "${element.first.name}_${element.first.sex}")
+            intent.putExtra("${index}_player2", "${element.second.name}_${element.second.sex}")
+        }
+        startActivity(intent)
+    }
+
+    fun start18(view: View) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("playersCount", playerPairs.size)
+        intent.putExtra("mode", "18")
         playerPairs.forEachIndexed { index, element ->
             intent.putExtra("${index}_player1", "${element.first.name}_${element.first.sex}")
             intent.putExtra("${index}_player2", "${element.second.name}_${element.second.sex}")
