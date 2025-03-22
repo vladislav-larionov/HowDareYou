@@ -1,3 +1,5 @@
+package com.example.howdareyou.pairs
+
 import com.example.howdareyou.Player
 
 class Game {

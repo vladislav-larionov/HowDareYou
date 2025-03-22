@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.howdareyou.pairs.CreatePairActivity
+import com.example.howdareyou.random.CreatePlayers
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTogetherClicked(view: View) {
+        val intent = Intent(this, CreatePlayers::class.java)
+        startActivity(intent)
 
     }
     fun onPairsClicked(view: View) {
